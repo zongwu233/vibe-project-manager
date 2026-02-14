@@ -80,8 +80,21 @@ ln -s ~/vibe-project-manager ~/.config/opencode/skills/vibe-project-manager
 
 ### 2. 创建任务
 
+**自动拆解模式（推荐）**：
 ```
-/vibe create-task "初始化项目基础结构"
+/vibe create-task "实现用户认证系统"
+```
+
+AI 会自动将此目标拆解为子任务：
+- task-001: 设计用户数据库模型
+- task-002: 实现用户注册 API
+- task-003: 实现用户登录 API
+- task-004: 添加 JWT 认证中间件
+- task-005: 创建登录表单组件
+
+**单任务模式**：
+```
+/vibe create-task "添加用户头像上传功能" --single
 ```
 
 ### 3. 开始工作
@@ -142,7 +155,7 @@ project-root/
 
 | 命令 | 描述 |
 |------|------|
-| `create-task` | 创建新任务 |
+| `create-task` | 创建新任务（支持自动拆解为子任务）|
 | `list-tasks` | 列出所有任务 |
 | `update-task` | 更新任务内容 |
 | `complete-task` | 标记任务完成 |
@@ -172,8 +185,11 @@ cd /path/to/your/project
 # 开始工作
 /vibe letsgo
 
-# 创建任务
-/vibe create-task "实现登录功能"
+# 创建任务（AI 自动拆解为子任务）
+/vibe create-task "实现用户认证功能"
+
+# 或创建单个任务
+/vibe create-task "添加密码重置功能" --single
 
 # 更新状态
 /vibe update-state "完成用户认证模块"

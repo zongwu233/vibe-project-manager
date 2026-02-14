@@ -80,8 +80,21 @@ This will create the `.vibe/` directory and all necessary documentation files.
 
 ### 2. Create Task
 
+**Auto-breakdown mode (recommended)**:
 ```
-/vibe create-task "Initialize project structure"
+/vibe create-task "Implement user authentication system"
+```
+
+AI will automatically break down this goal into subtasks:
+- task-001: Design user database schema
+- task-002: Implement user registration API
+- task-003: Implement user login API
+- task-004: Add JWT authentication middleware
+- task-005: Create login form component
+
+**Single task mode**:
+```
+/vibe create-task "Add user avatar upload feature" --single
 ```
 
 ### 3. Start Work
@@ -142,7 +155,7 @@ project-root/
 
 | Command | Description |
 |---------|-------------|
-| `create-task` | Create new task |
+| `create-task` | Create new task (supports auto-breakdown into subtasks) |
 | `list-tasks` | List all tasks |
 | `update-task` | Update task content |
 | `complete-task` | Mark task as completed |
