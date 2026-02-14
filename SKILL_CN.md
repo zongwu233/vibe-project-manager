@@ -1,3 +1,9 @@
+---
+name: vibe
+description: "项目管理脚手架工具，用于创建和维护 vibe coding 项目的文档结构。提供完整的项目状态管理、任务管理和会话管理功能。"
+user_invocable: true
+---
+
 # Vibe Project Manager
 
 ## 描述
