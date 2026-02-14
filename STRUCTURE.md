@@ -44,6 +44,10 @@ cd ~/vibe-project-manager
 ./install.sh
 ```
 
+安装脚本会自动创建符号链接到两个位置：
+- `~/.claude/skills/vibe-project-manager`（Claude Code）
+- `~/.config/opencode/skills/vibe-project-manager`（OpenCode）
+
 ### 2. 使用
 
 安装后，在 AI 对话中：
@@ -71,5 +75,12 @@ cd /path/to/your/project
 
 ```bash
 cd ~/vibe-project-manager
-# 修改文件后，OpenCode 会自动读取最新版本
+# 修改文件后，Claude Code 和 OpenCode 会自动读取最新版本
 ```
+
+## 安装位置
+
+- **Claude Code**: `~/.claude/skills/vibe-project-manager`
+- **OpenCode**: `~/.config/opencode/skills/vibe-project-manager`
+
+两者都是符号链接，指向 `~/vibe-project-manager` 目录。

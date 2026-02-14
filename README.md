@@ -1,45 +1,64 @@
 # Vibe Project Manager
 
-Vibe Coding 项目管理脚手架工具，用于创建和维护项目文档结构。
+A project management scaffolding tool for Vibe Coding that creates and maintains project documentation structure.
 
 ---
 
-## 功能特性
+## Features
 
-- ✅ 自动初始化项目文档结构
-- ✅ 项目状态管理（读取/更新）
-- ✅ 任务管理（创建/更新/完成）
-- ✅ 会话管理（letsgo/welldone/aftercrash）
-- ✅ 标准化的文档格式
-- ✅ 完整的项目进度跟踪
+- ✅ Automatic initialization of project documentation structure
+- ✅ Project state management (read/update)
+- ✅ Task management (create/update/complete)
+- ✅ Session management (letsgo/welldone/aftercrash)
+- ✅ Standardized documentation format
+- ✅ Complete project progress tracking
 
 ---
 
-## 安装
+## Installation
 
-### 方法一：复制到 OpenHands Skills 目录
-
-```bash
-# 复制整个目录到 OpenHands skills 目录
-cp -r ~/vibe-project-manager ~/.opencode/skills/vibe-project-manager
-```
-
-### 方法二：符号链接（推荐，方便更新）
+### Option 1: Use the installation script (recommended)
 
 ```bash
-# 创建符号链接
-ln -s ~/vibe-project-manager ~/.opencode/skills/vibe-project-manager
+cd ~/vibe-project-manager
+./install.sh
 ```
 
-### 验证安装
+The script will automatically install the skill to both:
+- `~/.claude/skills/vibe-project-manager` (Claude Code)
+- `~/.config/opencode/skills/vibe-project-manager` (OpenCode)
 
-安装后，在 AI 对话中输入：
+### Option 2: Manual installation
+
+For Claude Code:
+```bash
+cp -r ~/vibe-project-manager ~/.claude/skills/vibe-project-manager
+```
+
+For OpenCode:
+```bash
+cp -r ~/vibe-project-manager ~/.config/opencode/skills/vibe-project-manager
+```
+
+### Option 3: Symbolic link (recommended for development)
+
+```bash
+# For Claude Code
+ln -s ~/vibe-project-manager ~/.claude/skills/vibe-project-manager
+
+# For OpenCode
+ln -s ~/vibe-project-manager ~/.config/opencode/skills/vibe-project-manager
+```
+
+### Verify Installation
+
+After installation, in your AI conversation, type:
 
 ```
-使用 vibe-project-manager 技能
+Use vibe-project-manager skill
 ```
 
-或者直接使用命令：
+Or use commands directly:
 
 ```
 /vibe help
@@ -47,37 +66,37 @@ ln -s ~/vibe-project-manager ~/.opencode/skills/vibe-project-manager
 
 ---
 
-## 快速开始
+## Quick Start
 
-### 1. 初始化项目
+### 1. Initialize Project
 
-在你的项目根目录执行：
+In your project root directory:
 
 ```
 /vibe init
 ```
 
-这会创建 `.vibe/` 目录及所有必要的文档文件。
+This will create the `.vibe/` directory and all necessary documentation files.
 
-### 2. 创建任务
+### 2. Create Task
 
 ```
-/vibe create-task "初始化项目基础结构"
+/vibe create-task "Initialize project structure"
 ```
 
-### 3. 开始工作
+### 3. Start Work
 
 ```
 /vibe letsgo
 ```
 
-### 4. 更新状态
+### 4. Update State
 
 ```
-/vibe update-state "完成项目目录结构的创建"
+/vibe update-state "Complete project directory structure"
 ```
 
-### 5. 结束工作
+### 5. End Work
 
 ```
 /vibe welldone
@@ -85,21 +104,21 @@ ln -s ~/vibe-project-manager ~/.opencode/skills/vibe-project-manager
 
 ---
 
-## 项目结构
+## Project Structure
 
-初始化后的项目结构：
+After initialization:
 
 ```
 project-root/
 ├── .vibe/
-│   ├── design.md          # 项目设计文档（北极星）
-│   ├── state.md           # 项目状态（断点）
-│   ├── decisions.md       # 技术决策
-│   ├── letsgo.md          # 启动指令
-│   ├── welldone.md        # 结束流程
-│   ├── aftercrash.md      # 恢复流程
-│   ├── task-std.md        # 任务标准格式
-│   └── tasks/             # 任务目录
+│   ├── design.md          # Project design document (North Star)
+│   ├── state.md           # Project state (checkpoint)
+│   ├── decisions.md       # Technical decisions
+│   ├── letsgo.md          # Start instruction
+│   ├── welldone.md        # End workflow
+│   ├── aftercrash.md      # Recovery workflow
+│   ├── task-std.md        # Task standard format
+│   └── tasks/             # Tasks directory
 │       ├── task-001.md
 │       ├── task-002.md
 │       └── ...
@@ -108,64 +127,64 @@ project-root/
 
 ---
 
-## 命令参考
+## Command Reference
 
-### 基本命令
+### Basic Commands
 
-| 命令 | 描述 |
-|------|------|
-| `init` | 初始化项目文档结构 |
-| `status` | 读取当前项目状态 |
-| `update-state` | 更新项目状态 |
-| `help` | 显示帮助信息 |
+| Command | Description |
+|---------|-------------|
+| `init` | Initialize project documentation structure |
+| `status` | Read current project state |
+| `update-state` | Update project state |
+| `help` | Display help information |
 
-### 任务管理
+### Task Management
 
-| 命令 | 描述 |
-|------|------|
-| `create-task` | 创建新任务 |
-| `list-tasks` | 列出所有任务 |
-| `update-task` | 更新任务内容 |
-| `complete-task` | 标记任务完成 |
+| Command | Description |
+|---------|-------------|
+| `create-task` | Create new task |
+| `list-tasks` | List all tasks |
+| `update-task` | Update task content |
+| `complete-task` | Mark task as completed |
 
-### 会话管理
+### Session Management
 
-| 命令 | 描述 |
-|------|------|
-| `letsgo` | 启动工作流程 |
-| `welldone` | 结束工作流程 |
-| `aftercrash` | 恢复崩溃会话 |
+| Command | Description |
+|---------|-------------|
+| `letsgo` | Start workflow |
+| `welldone` | End workflow |
+| `aftercrash` | Recover crashed session |
 
 ---
 
-## 工作流程
+## Workflow
 
-### 1. 项目初始化
+### 1. Project Initialization
 
 ```
 cd /path/to/your/project
 /vibe init
 ```
 
-### 2. 日常工作
+### 2. Daily Work
 
 ```
-# 开始工作
+# Start work
 /vibe letsgo
 
-# 创建任务
-/vibe create-task "实现登录功能"
+# Create task
+/vibe create-task "Implement login feature"
 
-# 更新状态
-/vibe update-state "完成用户认证模块"
+# Update state
+/vibe update-state "Complete user authentication module"
 
-# 结束工作
+# End work
 /vibe welldone
 ```
 
-### 3. 会话恢复
+### 3. Session Recovery
 
-如果 AI 会话崩溃：
+If AI session crashes:
 
 ```
 /vibe aftercrash
@@ -173,103 +192,119 @@ cd /path/to/your/project
 
 ---
 
-## 核心原则
+## Core Principles
 
-### 北极星原则
-- `design.md` 是项目的北极星
-- ❌ Agent 不可修改
-- 所有开发工作必须遵循此设计
+### North Star Principle
+- `design.md` is the North Star of the project
+- ❌ Agent cannot modify
+- All development work must follow this design
 
-### 断点原则
-- `state.md` 是工作断点
-- ✅ 每次结束工作必须更新
-- 真实状态只存在于本地文件
+### Checkpoint Principle
+- `state.md` is the work checkpoint
+- ✅ Must update at the end of each work session
+- True state only exists in local files
 
-### 标准原则
-- 所有 `task-xxx.md` 必须遵循 4 段式格式
-- 目标、输入、输出、完成条件缺一不可
+### Standard Principle
+- All `task-xxx.md` must follow 4-section format
+- Goal, Input, Output, Completion conditions are indispensable
 
-### 可恢复原则
-- `aftercrash.md` 确保会话崩溃后快速恢复
-- 所有状态记录在 `state.md`
+### Recoverable Principle
+- `aftercrash.md` ensures quick recovery after session crash
+- All state records are in `state.md`
 
 ---
 
-## 文件说明
+## File Descriptions
 
 ### design.md
-- **职责**：北极星 - 稳定架构和设计约束
-- **可修改**：❌
-- **用途**：项目设计的核心文档，不应随意修改
+- **Role**: North Star - Stable architecture and design constraints
+- **Editable**: ❌
+- **Purpose**: Core document of project design, should not be modified arbitrarily
 
 ### state.md
-- **职责**：进度/断点 - 频繁更新的工作状态
-- **可修改**：✅
-- **用途**：记录项目当前进度、假设和问题
+- **Role**: Progress/Checkpoint - Frequently updated work status
+- **Editable**: ✅
+- **Purpose**: Record current progress, assumptions, and issues
 
 ### decisions.md
-- **职责**：关键结论 - 不可逆的技术决策
-- **可修改**：⚠️（仅添加新决策）
-- **用途**：记录重要的技术决策历史
+- **Role**: Key conclusions - Irreversible technical decisions
+- **Editable**: ⚠️ (Add new decisions only)
+- **Purpose**: Record important technical decision history
 
 ### tasks/task-xxx.md
-- **职责**：可执行任务 - 具体的开发任务
-- **可修改**：✅
-- **用途**：具体任务的详细描述和完成标准
+- **Role**: Executable tasks - Specific development tasks
+- **Editable**: ✅
+- **Purpose**: Detailed description and completion criteria for specific tasks
 
 ---
 
-## 故障排查
+## Troubleshooting
 
-### 问题：找不到 .vibe 目录
+### Issue: .vibe directory not found
 
-**原因**：项目未初始化
+**Cause**: Project not initialized
 
-**解决方案**：
+**Solution**:
 ```
 /vibe init
 ```
 
-### 问题：state.md 为空
+### Issue: state.md is empty
 
-**原因**：从未更新过状态
+**Cause**: State never updated
 
-**解决方案**：
+**Solution**:
 ```
-/vibe update-state "开始项目开发"
+/vibe update-state "Start project development"
 ```
 
-### 问题：任务创建失败
+### Issue: Task creation failed
 
-**原因**：`.vibe/tasks/` 目录不存在或权限不足
+**Cause**: `.vibe/tasks/` directory does not exist or insufficient permissions
 
-**解决方案**：
+**Solution**:
 ```
-# 检查目录是否存在
+# Check if directory exists
 ls -la .vibe/tasks/
 
-# 如果不存在，重新初始化
+# Reinitialize if not exists
 /vibe init
 ```
 
 ---
 
-## 更新日志
+## Documentation
+
+- **English**: [README.md](./README.md) (This file)
+- **中文文档**: [README.zh-CN.md](./README.zh-CN.md)
+- **Quick Start**: [QUICKSTART.en.md](./QUICKSTART.en.md) | [QUICKSTART.md](./QUICKSTART.md)
+- **Usage Examples**: [USAGE_EXAMPLE.md](./USAGE_EXAMPLE.md)
+- **Structure**: [STRUCTURE.md](./STRUCTURE.md)
+
+---
+
+## Changelog
+
+### v1.0.1 (2025-02-14)
+- ✅ Add English README.md
+- ✅ Keep Chinese documentation as README.zh-CN.md
+- ✅ Support simultaneous installation to Claude Code and OpenCode
+- ✅ Update installation script to support dual platforms
 
 ### v1.0.0 (2025-02-14)
-- ✅ 初始版本发布
-- ✅ 实现核心功能：初始化、状态管理、任务管理、会话管理
-- ✅ 标准化文档格式
-- ✅ 完整的项目结构模板
+- ✅ Initial release
+- ✅ Implement core features: initialization, state management, task management, session management
+- ✅ Standardized documentation format
+- ✅ Complete project structure template
 
 ---
 
-## 贡献
+## Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
 ---
 
-## 许可证
+## License
 
 MIT License

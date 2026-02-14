@@ -7,6 +7,26 @@
 
 ---
 
+## [1.0.1] - 2025-02-14
+
+### 新增
+- ✅ 添加英文 README.md
+- ✅ 保留中文文档为 README.zh-CN.md
+- ✅ 支持同时安装到 Claude Code 和 OpenCode
+- ✅ 更新安装脚本，支持双平台安装
+
+### 变更
+- 🔄 安装目录从 `~/.opencode/skills/` 更新为：
+  - Claude Code: `~/.claude/skills/`
+  - OpenCode: `~/.config/opencode/skills/`
+- 🔄 安装脚本自动创建符号链接到两个平台
+
+### 改进
+- 📝 更新所有文档，说明双平台支持
+- 📝 在 README 中添加语言切换链接
+
+---
+
 ## [1.0.0] - 2025-02-14
 
 ### 新增

@@ -14,6 +14,10 @@ cd ~/vibe-project-manager
 ./install.sh
 ```
 
+安装脚本会自动创建符号链接到：
+- **Claude Code**: `~/.claude/skills/vibe-project-manager`
+- **OpenCode**: `~/.config/opencode/skills/vibe-project-manager`
+
 安装完成后，在 AI 对话中输入：
 ```
 使用 vibe-project-manager 技能
